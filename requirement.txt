@@ -5,5 +5,5 @@ scikit-learn
 tensorboard
 streamlit
 matplotlib
-joblib
+keras
 ipykernel
