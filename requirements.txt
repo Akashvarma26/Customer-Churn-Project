@@ -2,8 +2,8 @@ pandas
 numpy
 scikit-learn
 ipykernel
-tensorboard==2.13.0
-tensorflow==2.13.0
-protobuf==3.20.3
-streamlit==1.10.0
-altair==4.2.0
+tensorboard==2.17.0
+tensorflow==2.17.0
+protobuf==4.24.3
+streamlit==1.27.2
+altair==4.2.2
