@@ -3,10 +3,10 @@ import pandas as pd
 import pickle
 import tensorflow
 
-model = tensorflow.keras.models.load_model("ann1.h5")
-ohe_geo = pickle.load(open("ohe_geo.pkl", "rb"))
-le_gender = pickle.load(open("le_gender.pkl", "rb"))
-sc = pickle.load(open("sc.pkl", "rb"))
+model = tensorflow.keras.models.load_model("models/ann1.h5")
+ohe_geo = pickle.load(open("preprocessing/ohe_geo.pkl", "rb"))
+le_gender = pickle.load(open("preprocessing/le_gender.pkl", "rb"))
+sc = pickle.load(open("preprocessing/sc.pkl", "rb"))
 
 st.title("Customer Churn Predictor developed by Akashvarma26")
 
@@ -48,9 +48,9 @@ if name:
     st.subheader(f"Churn Prediction Result of the customer:")
     st.progress(pred_percent)
     if pred_prob>0.5:
-        st.error(f'⚠️ {name}, the customer is likely to churn with a probability of {pred_prob:.3f}.')
+        st.error(f'⚠️ {name}, the customer is likely to churn. The churn probability is {pred_prob:.3f}.')
     else:
-        st.success(f'✅ {name}, the customer is not likely to churn with a probability of {pred_prob:.3f}.')
+        st.success(f'✅ {name}, the customer is not likely to churn. The churn probability is {pred_prob:.3f}.')
     if credit_score<500:
         st.warning(f"{name}, the credit score is quite low. Customers with low credit scores might have higher churn probabilities.")
     if balance==0:
